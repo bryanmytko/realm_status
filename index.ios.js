@@ -9,8 +9,21 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ListView
 } from 'react-native';
+
+const realms = require('./realms.json').realms;
+
+class Realm extends Component {
+  render() {
+    return (
+      <Text style={{width: 500, height: 50 }}>
+      {this.props.obj.name}
+      </Text>
+    )
+  }
+}
 
 class realm_status extends Component {
   render() {
@@ -19,12 +32,16 @@ class realm_status extends Component {
         <Text style={styles.welcome}>
           Welcome to Realm Status
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <Text style={{
+          flex: 3,
+          backgroundColor: "skyblue",
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          {realms.map(function(object, i){
+            return <Realm obj={object} key={i} />;
+          })}
         </Text>
       </View>
     );
