@@ -18,8 +18,8 @@ const realms = require('./realms.json').realms;
 class Realm extends Component {
   render() {
     return (
-      <Text style={{width: 500, height: 50 }}>
-      {this.props.obj.name}
+      <Text style={styles.realm_container}>
+        {this.props.obj.name}
       </Text>
     )
   }
@@ -32,17 +32,9 @@ class realm_status extends Component {
         <Text style={styles.welcome}>
           Welcome to Realm Status
         </Text>
-        <Text style={{
-          flex: 3,
-          backgroundColor: "skyblue",
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          {realms.map(function(object, i){
-            return <Realm obj={object} key={i} />;
-          })}
-        </Text>
+        {realms.map(function(realm, i) {
+          return <Realm obj={realm} key={i} />
+        })}
       </View>
     );
   }
@@ -50,20 +42,26 @@ class realm_status extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    backgroundColor: '#ccffcc',
+    paddingTop: 40,
+    paddingBottom: 40,
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  realm_container: {
+    flexDirection: 'column',
+    padding:10,
   },
 });
 
