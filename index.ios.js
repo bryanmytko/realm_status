@@ -16,10 +16,14 @@ import {
 const realms = require('./realms.json').realms;
 
 class Realm extends Component {
+  display_status(){
+    return (this.props.obj.status) ? "Up" : "Down"
+  }
+
   render() {
     return (
       <Text style={styles.realm_container}>
-        {this.props.obj.name}
+        {this.props.obj.name} - {this.display_status()}
       </Text>
     )
   }
