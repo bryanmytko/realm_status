@@ -33,15 +33,15 @@ class Realm extends Component {
 class realm_status extends Component {
   render() {
     return (
-        <Image style={{ height: 40, width: 40 }} source={require('./star.png')} />
-        <Image style= {{ flex: 1, flexDirection: "column", resizeMode: 'cover' }} source={require('./assets/img/background.jpg')} >
-          <Text style={styles.welcome}>
-            Welcome to Realm Status
-          </Text>
-          {realms.map(function(realm, i) {
-            return <Realm obj={realm} key={i} />
-          })}
-        </Image>
+        <Image style={{ height: 40, width: 40 }} source={require('./assets/img/background.jpg')} />
+        // <Image style= {{ flex: 1, flexDirection: "column", resizeMode: 'cover' }} source={require('./assets/img/background.jpg')} >
+        //   <Text style={styles.welcome}>
+        //     Welcome to Realm Status
+        //   </Text>
+        //   {realms.map(function(realm, i) {
+        //     return <Realm obj={realm} key={i} />
+        //   })}
+        // </Image>
     );
   }
 }
