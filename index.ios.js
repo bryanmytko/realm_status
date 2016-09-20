@@ -33,25 +33,26 @@ class Realm extends Component {
 class realm_status extends Component {
   render() {
     return (
-        <Image style={{ height: 40, width: 40 }} source={require('./assets/img/background.jpg')} />
-        // <Image style= {{ flex: 1, flexDirection: "column", resizeMode: 'cover' }} source={require('./assets/img/background.jpg')} >
-        //   <Text style={styles.welcome}>
-        //     Welcome to Realm Status
-        //   </Text>
-        //   {realms.map(function(realm, i) {
-        //     return <Realm obj={realm} key={i} />
-        //   })}
-        // </Image>
+        <Image style={styles.container} source={require('./assets/img/background.jpg')} >
+          <Text style={styles.welcome}>
+            Welcome to Realm Status
+          </Text>
+          {realms.map(function(realm, i) {
+            return <Realm obj={realm} key={i} />
+          })}
+        </Image>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: '#F5FCFF',
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor:'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   welcome: {
     fontSize: 20,
