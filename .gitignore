@@ -2,6 +2,11 @@
 #
 .DS_Store
 
+# Vim
+#
+*.swp
+*.swo
+
 # Xcode
 #
 build/
