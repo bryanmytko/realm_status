@@ -11,6 +11,7 @@ import {
   Text,
   View,
   ListView,
+  ScrollView,
   Image
 } from 'react-native';
 
@@ -37,9 +38,11 @@ class realm_status extends Component {
           <Text style={styles.welcome}>
             Welcome to Realm Status
           </Text>
+          <ScrollView ref='scrollView' keyboardDismissMode='interactive' style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
           {realms.map(function(realm, i) {
             return <Realm obj={realm} key={i} />
           })}
+          </ScrollView>
         </Image>
     );
   }
@@ -70,6 +73,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     padding:10,
   },
+  scrollView: {
+    flex: 1,
+  }
 });
 
 AppRegistry.registerComponent('realm_status', () => realm_status);
