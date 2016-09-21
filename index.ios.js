@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 40,
+    fontFamily: 'Bodoni 72',
     textAlign: 'center',
-    paddingTop: 40,
-    paddingBottom: 40,
+    paddingTop: 60,
+    paddingBottom: 20,
   },
   instructions: {
     textAlign: 'center',
