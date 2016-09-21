@@ -36,7 +36,7 @@ class realm_status extends Component {
     return (
         <Image style={styles.container} source={require('./assets/img/background.jpg')} >
           <Text style={styles.welcome}>
-            Welcome to Realm Status
+            Realm Status
           </Text>
           <ScrollView ref='scrollView' keyboardDismissMode='interactive' style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
           {realms.map(function(realm, i) {
