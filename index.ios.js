@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  Image
 } from 'react-native';
 
 const realms = require('./realms.json').realms;
@@ -32,14 +33,15 @@ class Realm extends Component {
 class realm_status extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Realm Status
-        </Text>
-        {realms.map(function(realm, i) {
-          return <Realm obj={realm} key={i} />
-        })}
-      </View>
+        <Image style={{ height: 40, width: 40 }} source={require('./star.png')} />
+        <Image style= {{ flex: 1, flexDirection: "column", resizeMode: 'cover' }} source={require('./assets/img/background.jpg')} >
+          <Text style={styles.welcome}>
+            Welcome to Realm Status
+          </Text>
+          {realms.map(function(realm, i) {
+            return <Realm obj={realm} key={i} />
+          })}
+        </Image>
     );
   }
 }
@@ -54,7 +56,7 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#ccffcc',
+    // backgroundColor: '#ccffcc',
     paddingTop: 40,
     paddingBottom: 40,
   },
